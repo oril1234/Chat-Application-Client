@@ -32,7 +32,82 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.message {
+  color: #000;
+  clear: both;
+  line-height: 18px;
+  font-size: 15px;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  max-width: 40%;
+  word-wrap: break-word;
+}
+
+.message::before {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  content: '';
+  display: block;
+  border: solid;
+  border-width: 0px 16px 16px 0px;
+  border-color: transparent;
+  border-right-color: #1d282f;
+}
+
+.message.received {
+  background: #1d282f;
+  color: white;
+  border-radius: 0px 5px 5px 5px;
+  float: left;
+  text-align: left;
+}
+
+.message.sent::before {
+  left: auto;
+  right: -28px;
+  border-width: 0px 16px 16px 16px;
+  border-color: transparent;
+  border-left-color: #025144;
+}
+
+.message.sent {
+  background: #025144;
+  border-radius: 5px 0px 5px 5px;
+  float: right;
+  margin-right: 5%;
+  text-align: left;
+  color: white
+}
+
+.unReadMessagesBox {
+  background: #202c2c;
+    width: "fit-content";
+    padding: 1%;
+    border-radius:25%;
+    font-size:19px;
+    margin-top: 1.3%;
+    margin-bottom: 2%;
+}
+
+.metadata {
+  float: right;
+  padding: 0 0 0 7px;
+  position: relative;
+  bottom: -4px;
+  color: white
+}
+
+.metadata .date {
+  color: white;
+  font-size: 11px;
+  display: inline-block;
+  padding-top: 50%;
 }
